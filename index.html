@@ -5,101 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KOOVI AI</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #090909;
-      color: white;
-      font-family: Arial, sans-serif;
-      display: flex;
-      height: 100vh;
-    }
-    aside {
-      width: 250px;
-      background: #111;
-      border-right: 1px solid #292929;
-      padding: 22px;
-    }
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 35px;
-    }
-    button {
-      background: #222;
-      color: white;
-      border: 1px solid #444;
-      border-radius: 10px;
-      padding: 12px;
-      cursor: pointer;
-    }
-    .new-chat { width: 100%; }
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
-    }
-    h1 { font-size: 38px; }
-    .subtitle { color: #888; }
-    .chat-box {
-      width: min(700px, 100%);
-      display: flex;
-      gap: 10px;
-      background: #171717;
-      border: 1px solid #444;
-      border-radius: 18px;
-      padding: 12px;
-      margin-top: 35px;
-    }
-    input {
-      flex: 1;
-      min-width: 0;
-      background: transparent;
-      color: white;
-      border: none;
-      outline: none;
-      font-size: 16px;
-    }
-    .send { background: #eee; color: #111; }
-    @media(max-width:600px) {
-      aside { width: 75px; padding: 12px 8px; }
-      .logo { font-size: 12px; }
-      .new-chat { font-size: 11px; padding: 8px 3px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <aside>
+
+  <aside class="sidebar">
     <div class="logo">KOOVI AI</div>
     <button class="new-chat" onclick="newChat()">+ Новый чат</button>
+    <div id="history"></div>
   </aside>
 
   <main>
     <h1>KOOVI AI</h1>
     <p class="subtitle">Твой искусственный интеллект</p>
 
+    <div id="messages"></div>
+
     <div class="chat-box">
-      <input id="message" placeholder="Напиши сообщение...">
+      <input id="message" placeholder="Напиши сообщение..." />
       <button class="send" onclick="sendMessage()">➤</button>
     </div>
   </main>
 
-  <script>
-    function sendMessage() {
-      const input = document.getElementById('message');
-      if (!input.value.trim()) return;
-      alert('Следующим этапом подключим настоящий ИИ!');
-      input.value = '';
-    }
-
-    function newChat() {
-      document.getElementById('message').value = '';
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
